@@ -13,7 +13,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import id.rakhmad.demo.model.Book;
-import io.agroal.pool.ConnectionHandler.State;
 
 @Path("/books")
 public class BookResource {
