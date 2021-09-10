@@ -2,7 +2,9 @@ package id.rakhmad.demo.health;
 
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
+import org.eclipse.microprofile.health.Readiness;
 
+@Readiness
 public class CustomReadinessProbe implements HealthCheck {
 
     @Override
