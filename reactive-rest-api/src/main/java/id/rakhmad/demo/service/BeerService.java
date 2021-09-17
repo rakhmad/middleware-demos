@@ -27,12 +27,13 @@ public interface BeerService {
     @Fallback(PunkAPIFallBack.class)
     List<Beer> getBeers(@QueryParam("page") int page);
 
-    public static class PunkAPIFallBack implements FallbackHandler<Beer> {
+    public static class PunkAPIFallBack implements FallbackHandler<List<Beer>> {
         private static final Beer EMPTY_BEER = Beer.of("EMPTY", "Empty Beer", 0.0);
+        private static final List<Beer> LIST_EMPTY_BEER = List.of(EMPTY_BEER);
 
         @Override
-        public Beer handle(ExecutionContext context) {
-            return EMPTY_BEER;
+        public List<Beer> handle(ExecutionContext context) {
+            return LIST_EMPTY_BEER;
         }
 
     }
