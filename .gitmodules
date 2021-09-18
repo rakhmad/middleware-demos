@@ -1,0 +1,3 @@
+[submodule "demo-rest-api"]
+	path = demo-rest-api
+	url = https://github.com/rakhmad/demo-rest-api.git
