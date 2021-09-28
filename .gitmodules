@@ -1,3 +1,6 @@
 [submodule "demo-rest-api"]
 	path = demo-rest-api
 	url = https://github.com/rakhmad/demo-rest-api.git
+[submodule "book-generator"]
+	path = book-generator
+	url = https://github.com/rakhmad/book-generator.git
