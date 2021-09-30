@@ -1,21 +1,55 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <Layout>
+    <BookList :books="books" />
+  </Layout>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script>
+import Layout from "./components/Layout.vue"
+import BookList from "./components/BookList.vue"
+
+import axios from "axios"
+
+export default {
+  components: {
+    Layout,
+    BookList,
+  },
+  data() {
+    return {
+      base_url: "http://localhost:8080",
+      books: [],
+    }
+  },
+  methods: {
+    async fetchBooks() {
+      try {
+        const api_url = `${this.base_url}/books`
+        const response = await axios.get(api_url)
+        const results = response.data
+        debugger
+        this.books = results.map(book => ({
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          isbn_code: book.isbn_code,
+          publisher: book.publisher,
+        }))
+        debugger
+      } catch (err) {
+        if(err.response) {
+          console.log("Server error:", err)
+        } else if (err.request) {
+          console.log("Network error:", err)
+        } else {
+          console.log("Client error:", err)
+        }
+      }
+    }
+  },
+  mounted() {
+    
+    this.fetchBooks()
+  }
 }
-</style>
+</script>
