@@ -7,24 +7,26 @@
 <script>
 import Layout from "./components/Layout.vue"
 import BookList from "./components/BookList.vue"
+import "./config.js"
 
 import axios from "axios"
 
 export default {
+  name: 'App',
   components: {
     Layout,
     BookList,
   },
   data() {
     return {
-      base_url: "http://localhost:8080",
+      baseUrl: "http://book-service",
       books: [],
     }
   },
   methods: {
     async fetchBooks() {
       try {
-        const api_url = `${this.base_url}/books`
+        const api_url = `$this.baseUrl/books`
         const response = await axios.get(api_url)
         const results = response.data
         this.books = results.map(book => ({
