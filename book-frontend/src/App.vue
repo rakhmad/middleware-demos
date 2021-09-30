@@ -27,7 +27,6 @@ export default {
         const api_url = `${this.base_url}/books`
         const response = await axios.get(api_url)
         const results = response.data
-        debugger
         this.books = results.map(book => ({
           id: book.id,
           title: book.title,
@@ -35,7 +34,6 @@ export default {
           isbn_code: book.isbn_code,
           publisher: book.publisher,
         }))
-        debugger
       } catch (err) {
         if(err.response) {
           console.log("Server error:", err)
