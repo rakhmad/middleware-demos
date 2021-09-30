@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "author": "Joshua Bloch",
+        "isbn_code": "978-0134685991",
+        "publisher": "‎Addison-Wesley Professional",
+        "title": "Effective Java"
+    },
+    {
+        "id": 2,
+        "author": "Robert C. Martin",
+        "isbn_code": " 978-0132350884",
+        "publisher": "Pearson",
+        "title": "Clean Code: A Handbook of Agile Software Craftsmanship"
+    },
+    {
+        "id": 3,
+        "author": "David Thomas",
+        "isbn_code": " 978-0135957059",
+        "publisher": "‎Addison-Wesley Professional",
+        "title": "The Pragmatic Programmer: Your Journey To Mastery"
+    },
+    {
+        "id": 4,
+        "author": "Erich Gamma, et. al.",
+        "isbn_code": " 978-0201633610",
+        "publisher": "‎Addison-Wesley Professional",
+        "title": "Design Patterns: Elements of Reusable Object-Oriented Software"
+    },
+    {
+        "id": 5,
+        "author": "Martin Fowler",
+        "isbn_code": " 978-0134757599",
+        "publisher": "‎Addison-Wesley Professional",
+        "title": "Refactoring: Improving the Design of Existing Code (2nd Edition) "
+    },
+    {
+        "id": 6,
+        "author": "Michael Fethers",
+        "isbn_code": " 978-0131177055",
+        "publisher": "‎Pearson",
+        "title": "Working Effectively with Legacy Code"
+    },
+    {
+        "id": 7,
+        "author": "Kent Beck",
+        "isbn_code": " 978-0321146533",
+        "publisher": "‎ Addison-Wesley Professional",
+        "title": "Test Driven Development: By Example"
+    },
+    {
+        "id": 8,
+        "author": "Kent Beck",
+        "isbn_code": "978-0321278654",
+        "publisher": "‎Addison-Wesley Professional",
+        "title": "Extreme Programming Explained: Embrace Change, 2nd Edition"
+    },
+    {
+        "id": 9,
+        "author": "Martin Fowler",
+        "isbn_code": "978-0321127426",
+        "publisher": "‎Addison-Wesley Professional",
+        "title": "Patterns of Enterprise Application Architecture"
+    },
+    {
+        "id": 10,
+        "author": "Eric Evans",
+        "isbn_code": "978-0321125217",
+        "publisher": "‎Addison-Wesley Professional",
+        "title": "Domain-Driven Design: Tackling Complexity in the Heart of Software"
+    }
+]
