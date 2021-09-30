@@ -7,7 +7,6 @@
 <script>
 import Layout from "./components/Layout.vue"
 import BookList from "./components/BookList.vue"
-import "./config.js"
 
 import axios from "axios"
 
@@ -19,14 +18,14 @@ export default {
   },
   data() {
     return {
-      baseUrl: "http://book-service",
+      baseUrl: import.meta.env.VITE_BOOKS_API,
       books: [],
     }
   },
   methods: {
     async fetchBooks() {
       try {
-        const api_url = `$this.baseUrl/books`
+        const api_url = `${this.baseUrl}/books`
         const response = await axios.get(api_url)
         const results = response.data
         this.books = results.map(book => ({
