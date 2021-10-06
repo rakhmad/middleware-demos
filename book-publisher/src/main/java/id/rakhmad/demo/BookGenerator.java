@@ -11,12 +11,15 @@ import javax.inject.Inject;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
+import org.jboss.logging.Logger;
 
 import io.quarkus.scheduler.Scheduled;
 import io.smallrye.reactive.messaging.kafka.Record;
 
 @ApplicationScoped
 public class BookGenerator {
+
+        private static final Logger LOG = Logger.getLogger(BookGenerator.class);
 
         private static final List<Book> BOOKS = Arrays.asList("A Life on Our Planet", "Letter from a Stoic",
                         "The Design of Everyday Things", "Extreme Ownership", "The Lean Startup", "The Infinite Game",
@@ -36,6 +39,9 @@ public class BookGenerator {
         @Scheduled(every = "5s")
         public void sendRandomBookToKafka() {
                 int randomNum = ThreadLocalRandom.current().nextInt(0, BOOKS.size());
-                emitter.send(Record.of(UUID.randomUUID().toString(), BOOKS.get(randomNum)));
+                Record<String, Book> record = Record.of(UUID.randomUUID().toString(), BOOKS.get(randomNum));
+                emitter.send(record);
+                LOG.infof("##### Published Message to Kafka: %s", record);
+
         }
 }
